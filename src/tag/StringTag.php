@@ -39,8 +39,8 @@ class StringTag extends NamedTag{
 	 */
 	public function __construct(string $name = "", string $value = ""){
 		parent::__construct($name);
-		if(strlen($value) > 32767){
-			throw new InvalidArgumentException("StringTag cannot hold more than 32767 bytes, got string of length " . strlen($value));
+		if(strlen($value) > 65536){
+			throw new InvalidArgumentException("StringTag cannot hold more than 65536 bytes, got string of length " . strlen($value));
 		}
 		$this->value = $value;
 	}
